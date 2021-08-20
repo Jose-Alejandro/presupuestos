@@ -1,0 +1,563 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "Presupuestos",
+		"description": "Presupuestos API Definition",
+		"version": "1.0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:3000"
+		}
+	],
+	"paths": {
+		"/users/register": {
+			"post": {
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"password": {
+										"type": "string"
+									},
+									"names": {
+										"type": "string"
+									},
+									"last_names": {
+										"type": "string"
+									},
+									"email": {
+										"type": "string"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"names\": \"alejandro\",\n\t\"last_names\":\"esquivel\",\n\t\"email\": \"alexmail2@mail.com\",\n\t\"password\":\"pass12\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/users/login": {
+			"post": {
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"password": {
+										"type": "string"
+									},
+									"email": {
+										"type": "string"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"email\": \"alexmail@mail.com\",\n\t\"password\":\"pass12\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/users/update": {
+			"post": {
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"password": {
+										"type": "string"
+									},
+									"names": {
+										"type": "string"
+									},
+									"last_names": {
+										"type": "string"
+									},
+									"email": {
+										"type": "string"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n  \"names\": \"Alex\",\n  \"last_names\": \"Esquivel\",\n  \"email\": \"alexmail@mail.com\",\n  \"password\": \"pass12\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/users/user": {
+			"get": {
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets": {
+			"get": {
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets/create": {
+			"post": {
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"project": {
+										"type": "string"
+									},
+									"version": {
+										"type": "string"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"project\":\"cursada 4\",\n\t\"version\":\"1\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets/delete": {
+			"delete": {
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets/update": {
+			"post": {
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"project": {
+										"type": "string"
+									},
+									"id": {
+										"type": "integer"
+									},
+									"version": {
+										"type": "string"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"id\": 8,\n    \"project\": \"cursada\",\n    \"version\": \"1\"\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets/{id}/createMovement": {
+			"post": {
+				"description": "",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "object",
+								"properties": {
+									"amount": {
+										"type": "integer"
+									},
+									"month": {
+										"type": "integer"
+									},
+									"year": {
+										"type": "integer"
+									},
+									"concept": {
+										"type": "string"
+									},
+									"type": {
+										"type": "string"
+									}
+								}
+							},
+							"examples": {
+								"0": {
+									"value": "{\n\t\"concept\":\"Venta proyecto 1\",\n\t\"type\":\"INGRESOS\",\n\t\"amount\":2500,\n\t\"month\":10,\n\t\"year\":2021\n}"
+								}
+							}
+						}
+					}
+				},
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets/{id}/recursos": {
+			"get": {
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets/{id}/deleteMovement": {
+			"delete": {
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets/{id}/gastosAdmin": {
+			"get": {
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets/{id}/ingresos": {
+			"get": {
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		},
+		"/budgets/{id}/costosDirectos": {
+			"get": {
+				"description": "",
+				"responses": {
+					"200": {
+						"description": "",
+						"content": {
+							"application/json; charset=utf-8": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {}
+							}
+						}
+					}
+				},
+				"servers": [
+					{
+						"url": "http://localhost:3000"
+					}
+				]
+			},
+			"servers": [
+				{
+					"url": "http://localhost:3000"
+				}
+			]
+		}
+	}
+}

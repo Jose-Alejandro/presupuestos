@@ -1,0 +1,43 @@
+<%- include('header.ejs')%>
+
+	</head>
+
+	<body class="text-center">
+
+		<main class="form-signin">
+			<h1 class="text-center TrendProducts mt-4">
+				<%=title %>
+			</h1>
+			<h2 class="text-center">Cambio de Contraseña</h2>
+
+			<form id="updatePassword" class="row g-3 m-5" accept-charset="UTF-8">
+				<div class="col-md-4">
+					<label for="inputEmail4" class="form-label">Names</label>
+					<input type="text" name="names" id="names" class="form-control" readonly>
+				</div>
+				<div class="col-md-4">
+					<label for="inputEmail4" class="form-label">Last Names</label>
+					<input type="text" name="last_names" id="last_names" class="form-control" readonly>
+				</div>
+				<div class="col-md-4">
+					<label for="inputEmail4" class="form-label">Email</label>
+					<input type="email" name="email" id="email" class="form-control" readonly>
+				</div>
+
+				<div class="col-md-4">
+					<label for="inputPassword4" class="form-label"> Old Password</label>
+					<input type="password" name="password" id="password" class="form-control">
+				</div>
+				<div class="col-md-4">
+					<label for="inputPassword4" class="form-label">New Password</label>
+					<input type="password" name="newpassword" id="newpassword" class="form-control">
+				</div>
+				<div class="col-12">
+					<a id="update" class="btn btn-primary" style="width:150px">Cambiar Contraseña</a>
+				</div>
+			</form>
+		</main>
+
+		<script src="./assets/modules/update.js"></script>
+		<script src="./assets/dist/js/bootstrap.bundle.min.js "></script>
+	</body>

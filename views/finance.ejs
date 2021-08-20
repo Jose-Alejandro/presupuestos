@@ -1,0 +1,40 @@
+<%- include('header.ejs')%>
+	<link rel="stylesheet" href="./assets/dist/css/sidebars.css">
+	</head>
+
+	<body>
+		<header>
+			<%- include('navbar.ejs')%>
+		</header>
+
+		<div class="row ">
+			<div>
+				<!-- <side bar> -->
+			</div>
+			<main class="col-12">
+				<div class="container marketing">
+					<h1 class=" text-center">Bienvenido a <%= title %>
+					</h1>
+					<h2 id='projectName' class="text-center"></h2>
+					<%- include('resumen.ejs')%>
+						<%- include('ingresos.ejs')%>
+							<%- include('costDirect.ejs')%>
+								<%- include('costAdmin.ejs')%>
+									<%- include('recursos.ejs')%>
+				</div>
+			</main>
+			<!-- FOOTER -->
+			<%- include('footer.ejs')%>
+		</div>
+		<script src="./assets/modules/finance.js "></script>
+		<script src="./assets/modules/ingresos.js "></script>
+		<script src="./assets/modules/costDirect.js "></script>
+		<script src="./assets/modules/costAdmin.js "></script>
+		<script src="./assets/modules/recursos.js "></script>
+		<script src="./assets/modules/resumen.js "></script>
+		<script src="./assets/modules/exit.js "></script>
+		<script src="./assets/dist/js/sidebars.js "></script>
+		<script src="./assets/dist/js/bootstrap.bundle.min.js "></script>
+	</body>
+
+	</html>

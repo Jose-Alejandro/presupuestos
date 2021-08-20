@@ -1,0 +1,39 @@
+<div class="container marketing">
+	<h1 class=" text-center">Bienvenido a <%= title %>
+	</h1>
+	<div class="row">
+		<h2>Presupuestos disponibles</h2>
+		<div id='table'>
+			<div class="row">
+				<div class="col-1">ID</div>
+				<div class="col-2">Fecha de Creación</div>
+				<div class="col-2">Proyecto</div>
+				<div class="col-1">Versión</div>
+				<div class="col-1"></div>
+				<div class="col-1"></div>
+				<div class="col-1"></div>
+			</div>
+		</div>
+	</div>
+	<div class="row text-center">
+		<div class="col">
+			<form id="newBudget" class="row g-3 m-5">
+				<div class="col-md-6">
+					<label for="proyecto" class="form-label">Proyecto</label>
+					<input type="text" name="project" class="form-control" placeholder="Nombre del proyecto">
+				</div>
+				<div class="col-md-6">
+					<label for="version" class="form-label">Versión</label>
+					<input type="text" name="version" class="form-control" placeholder="1">
+				</div>
+				<div class="col-4">
+				</div>
+				<div class="col-4">
+					<a id='create' class='btn btn-outline-success btn-lg'>Crear nuevo presupuesto</a>
+				</div>
+				<div class="col-4">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
