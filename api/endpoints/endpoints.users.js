@@ -52,7 +52,7 @@ router.post('/update', middlewares.validateToken, middlewares.validateRegisterIn
 			throw new Error('Internal error with the server, try again later');
 	} catch (error) {
 		console.log('error: ' + error.message);
-		res.status(400).send('error: ' + error.message);
+		res.status(400).json('error: ' + error.message);
 	}
 });
 

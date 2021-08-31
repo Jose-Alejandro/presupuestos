@@ -24,8 +24,14 @@ module.exports.validateUser = async (usr) => {
 
 
 module.exports.generateUserToken = async (user) => {
+	let d = {
+		id: user.id,
+		names: user.names,
+		email: user.email,
+		role: user.role
+	};
 	const token = jwt.sign(
-		{ data: user },
+		{ data: d },
 		process.env.SECRET_KEY
 	);
 	return token;

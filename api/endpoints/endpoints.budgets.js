@@ -10,7 +10,7 @@ router.get('/', middlewares.validateToken, async (req, res) => {
 		res.status(200).json(budgets);
 	} catch (error) {
 		console.log('error: ' + error.message);
-		res.status(400).send('error: ' + error.message);
+		res.status(400).json('error: ' + error.message);
 	}
 });
 
@@ -23,7 +23,7 @@ router.post('/create', middlewares.validateToken, middlewares.validateBudgetInfo
 			throw new Error('Internal error with the server, try again later');
 	} catch (error) {
 		console.log('error: ' + error.message);
-		res.status(400).send('error: ' + error.message);
+		res.status(400).json('error: ' + error.message);
 	}
 });
 
@@ -37,7 +37,7 @@ router.post('/update', middlewares.validateToken, middlewares.validateBudgetInfo
 			throw new Error('Internal error with the server, try again later');
 	} catch (error) {
 		console.log('error: ' + error.message);
-		res.status(400).send('error: ' + error.message);
+		res.status(400).json('error: ' + error.message);
 	}
 });
 
@@ -50,7 +50,7 @@ router.delete('/delete', middlewares.validateToken, async (req, res) => {
 			throw new Error('Internal error with the server, try again later');
 	} catch (error) {
 		console.log('error: ' + error.message);
-		res.status(400).send('error: ' + error.message);
+		res.status(400).json('error: ' + error.message);
 	}
 });
 

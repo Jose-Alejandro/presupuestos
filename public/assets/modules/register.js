@@ -1,17 +1,3 @@
-class Session {
-	constructor(token) {
-		this.token = email;
-	}
-
-	static async saveSession(token) {
-		sessionStorage.setItem('userSession', token);
-	}
-
-	static retrieveSession() {
-		let resultado = sessionStorage.getItem('userSession');
-		return resultado;
-	}
-}
 
 let session = sessionStorage.getItem('userSession');
 if (session != null) {
@@ -54,7 +40,7 @@ registerButton.addEventListener('click', async () => {
 				);
 				if (response.status == 200) {
 					let token = await response.json();
-					Session.saveSession(token);
+					sessionStorage.setItem('userSession', token);
 					location.href = "/";
 				} else {
 					throw new Error(await response.text());

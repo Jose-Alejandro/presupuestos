@@ -19,7 +19,7 @@ module.exports.retrieveMovements = async (budgetID, type) => {
 				type: type
 			}
 		});
-		if (movements != null) {
+		if (movements) {
 			return movements;
 		}
 		throw new Error('no movements exists: ' + type);
@@ -54,7 +54,7 @@ module.exports.deleteMovements = async (movement) => {
 				id: movement.id
 			}
 		});
-		if (result != null) {
+		if (result) {
 			return result;
 		}
 	} catch (error) {

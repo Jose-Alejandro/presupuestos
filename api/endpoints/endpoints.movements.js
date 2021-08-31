@@ -68,7 +68,7 @@ router.post('/:id/modifyMovement', middlewares.validateToken, async (req, res) =
 		res.status(200).json(req.body);
 	} catch (error) {
 		console.log('error: ' + error.message);
-		res.status(400).send('error: ' + error.message);
+		res.status(400).json('error: ' + error.message);
 	}
 });
 
@@ -83,7 +83,7 @@ router.delete('/:id/deleteMovement', middlewares.validateToken, async (req, res)
 		throw new Error("An error occurred, or movement already deleted!");
 	} catch (error) {
 		console.log('error: ' + error.message);
-		res.status(400).send('error: ' + error.message);
+		res.status(400).json('error: ' + error.message);
 	}
 });
 

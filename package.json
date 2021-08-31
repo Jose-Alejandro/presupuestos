@@ -10,6 +10,7 @@
 		"test": "NODE_ENV=test ./node_modules/.bin/mocha -r dotenv/config --reporter spec"
 	},
 	"dependencies": {
+		"bcrypt": "^5.0.1",
 		"chai": "^4.3.4",
 		"chai-http": "^4.3.0",
 		"cookie-parser": "~1.4.4",

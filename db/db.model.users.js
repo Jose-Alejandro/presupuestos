@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('./db.connection');
+const Budgets = require('./db.model.budgets');
 
 
 const Users = sequelize.define('users',
@@ -31,4 +32,5 @@ const Users = sequelize.define('users',
 );
 
 
+Users.hasMany(Budgets, { foreignKey: 'id_user' });
 module.exports = Users;

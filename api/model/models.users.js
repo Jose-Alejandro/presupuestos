@@ -1,14 +1,17 @@
 const users = require('../../db/db.model.users');
+const bcrypt = require('bcrypt');
 
 
 module.exports.RegisterUser = async (user) => {
 	try {
+		const hash = bcrypt.hashSync(user.password, 10);
 		let exists = await users.findOne({ where: { email: user.email } });
-		if (exists != null) {
+		if (exists) {
 			throw new Error('User already exists or it is inactive');
 		} else {
 			user.active = 'true';
 			user.role = 'user';
+			user.password = hash;
 			await users.create(user);
 			return true;
 		}
@@ -22,14 +25,13 @@ module.exports.UserExists = async (user) => {
 		let exists = await users.findOne({
 			where: {
 				email: user.email,
-				password: user.password,
 				active: 'true',
 			}
 		});
-		if (exists != null) {
+		if (exists && bcrypt.compareSync(user.password, exists.password)) {
 			return exists;
 		}
-		throw new Error('user doesn\'t exists');
+		throw new Error('No user with these credentials, verify they are correct');
 	} catch (error) {
 		throw error;
 	}
@@ -41,11 +43,10 @@ module.exports.retrieveUser = async (user) => {
 		let User = await users.findOne({
 			where: {
 				email: user.email,
-				password: user.password,
 				active: 'true',
 			}
 		});
-		if (User != null) {
+		if (User) {
 			return User.dataValues;
 		}
 		throw new Error('User no longer exists or is inactive');
@@ -57,10 +58,11 @@ module.exports.retrieveUser = async (user) => {
 
 module.exports.modifyUser = async (user, old) => {
 	try {
+		const hash = bcrypt.hashSync(user.password, 10);
+		user.password = hash;
 		let result = await users.update(user, {
 			where: {
 				email: old.email,
-				password: old.password,
 				active: 'true',
 			}
 		});

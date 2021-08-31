@@ -1,5 +1,6 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('./db.connection');
+const Movements = require('./db.model.movements');
 
 
 const Budgets = sequelize.define('budgets', {
@@ -23,5 +24,5 @@ const Budgets = sequelize.define('budgets', {
 	timestamps: true
 });
 
-
+Budgets.hasMany(Movements, { foreignKey: 'id_budget' });
 module.exports = Budgets;

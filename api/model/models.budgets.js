@@ -20,7 +20,7 @@ module.exports.retrieveBudgets = async (user) => {
 				id_user: user.id,
 			}
 		});
-		if (Budgets != null) {
+		if (Budgets) {
 			return Budgets;
 		}
 		throw new Error('Budget no longer exists or is inactive');

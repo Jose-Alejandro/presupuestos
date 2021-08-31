@@ -3,7 +3,7 @@
 const rateLimit = require("express-rate-limit");
 const controlerUsers = require('../api/controllers/controllers.Users');
 const Joi = require('joi');
-const dataValidationModel = require('./dataValidation');
+const dataValidationModel = require('../dto/dataValidation');
 
 /** Rate limiter middleware */
 module.exports.limiter = rateLimit({
