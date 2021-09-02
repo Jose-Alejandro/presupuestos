@@ -21,10 +21,6 @@ async function getUser() {
 			updatePasswordButton.addEventListener('click', async () => {
 				try {
 					let form = document.forms['updatePassword'];
-					let password = document.getElementById('password');
-					if (password.value != user.password) {
-						throw new Error('Invalid current password!!');
-					}
 					let response = await fetch('/users/update',
 						{
 							method: 'POST',

@@ -42,7 +42,7 @@ router.get('/user', middlewares.validateToken, async (req, res) => {
 });
 
 
-router.post('/update', middlewares.validateToken, middlewares.validateRegisterInfo, async (req, res) => {
+router.post('/update', middlewares.validateToken, async (req, res) => {
 	let modifiedUser = req.body;
 	try {
 		let result = await controlersUsers.modifyUser(modifiedUser, req.params.user);
